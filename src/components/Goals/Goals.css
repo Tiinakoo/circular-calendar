@@ -1,0 +1,9 @@
+.goals {
+    padding: 1rem 2rem 2rem 2rem;
+}
+
+.goal-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
