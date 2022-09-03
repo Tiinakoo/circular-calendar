@@ -1,0 +1,47 @@
+.form {
+    display: flex;
+    justify-content: center;
+    padding: 1rem 2rem;
+}
+
+.item {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin: 2rem 1rem;
+}
+
+.input {
+    border-radius: 10px;
+    border: 2px solid black;
+    height: 2rem;
+    padding: 0 1rem;
+    width: 10rem;
+}
+
+.select {
+    background-color: white;
+    border-radius: 10px;
+    border: 2px solid black;
+    height: 2rem;
+    padding: 0 1rem;
+    width: 10rem;
+}
+
+.button {
+    background-color: transparent;
+    border-radius: 10px;
+    border: 2px solid black;
+    height: 2rem;
+    padding: 0 1rem;
+    width: 10rem;
+}
+
+.button-disabled {
+    border-color: grey;
+}
+
+.error {
+    color: red;
+}
