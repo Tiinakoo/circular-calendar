@@ -3,7 +3,177 @@
 }
 
 .goal-list {
-    list-style-type: none;
-    margin: 0;
+    position: relative;
+    border: 1px solid black;
     padding: 0;
+    margin: 1em auto;
+    width: 40em;
+    height: 40em;
+    border-radius: 50%;
+    list-style: none;
+    overflow: hidden;
+}
+
+li {
+    overflow: hidden;
+    position: absolute;
+    top: 0; right: 0;
+    width: 50%; height: 50%;
+    transform-origin: 0 100%;
+    border: 1px solid black;
+}
+
+.list-item {
+    position: absolute;
+    left: -100%;
+    width: 200%;
+    height: 200%;
+    text-align: center;
+    transform: skewY(60deg) rotate(15deg);
+    padding-top: 50px;
+}
+
+li:first-child {
+    --webkit-transform: rotate(0deg) skewY(-60deg);
+    -ms-transform: rotate(0deg) skewY(-60deg);
+    transform: rotate(0deg) skewY(-60deg);
+}
+
+li:first-child p {
+    --webkit-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+}
+
+li:nth-child(2) {
+    --webkit-transform: rotate(30deg) skewY(-60deg);
+    -ms-transform: rotate(30deg) skewY(-60deg);
+    transform: rotate(30deg) skewY(-60deg);
+}
+
+li:nth-child(2) p {
+    --webkit-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+}
+
+li:nth-child(3) {
+    --webkit-transform: rotate(60deg) skewY(-60deg);
+    -ms-transform: rotate(60deg) skewY(-60deg);
+    transform: rotate(60deg) skewY(-60deg);
+}
+
+li:nth-child(3) p {
+    --webkit-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+}
+
+li:nth-child(4) {
+    --webkit-transform: rotate(90deg) skewY(-60deg);
+    -ms-transform: rotate(90deg) skewY(-60deg);
+    transform: rotate(90deg) skewY(-60deg);
+}
+
+li:nth-child(4) p {
+    --webkit-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+}
+
+li:nth-child(5) {
+    --webkit-transform: rotate(120deg) skewY(-60deg);
+    -ms-transform: rotate(120deg) skewY(-60deg);
+    transform: rotate(120deg) skewY(-60deg);
+}
+
+li:nth-child(5) p {
+    --webkit-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+}
+
+li:nth-child(6) {
+    --webkit-transform: rotate(150deg) skewY(-60deg);
+    -ms-transform: rotate(150deg) skewY(-60deg);
+    transform: rotate(150deg) skewY(-60deg);
+}
+
+li:nth-child(6) p {
+    --webkit-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+
+}
+
+li:nth-child(7) {
+    --webkit-transform: rotate(180deg) skewY(-60deg);
+    -ms-transform: rotate(180deg) skewY(-60deg);
+    transform: rotate(180deg) skewY(-60deg);
+}
+
+li:nth-child(7) p {
+    --webkit-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+}
+
+li:nth-child(8) {
+    --webkit-transform: rotate(210deg) skewY(-60deg);
+    -ms-transform: rotate(210deg) skewY(-60deg);
+    transform: rotate(210deg) skewY(-60deg);
+}
+
+li:nth-child(8) p {
+    --webkit-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+}
+
+li:nth-child(9) {
+    --webkit-transform: rotate(240deg) skewY(-60deg);
+    -ms-transform: rotate(240deg) skewY(-60deg);
+    transform: rotate(240deg) skewY(-60deg);
+}
+
+li:nth-child(9) p {
+    --webkit-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+}
+
+li:nth-child(10) {
+    --webkit-transform: rotate(270deg) skewY(-60deg);
+    -ms-transform: rotate(270deg) skewY(-60deg);
+    transform: rotate(270deg) skewY(-60deg);
+}
+
+li:nth-child(10) p {
+    --webkit-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+}
+
+li:nth-child(11) {
+    --webkit-transform: rotate(300deg) skewY(-60deg);
+    -ms-transform: rotate(300deg) skewY(-60deg);
+    transform: rotate(300deg) skewY(-60deg);
+}
+
+li:nth-child(11) p {
+    --webkit-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+}
+
+li:nth-child(12) {
+    --webkit-transform: rotate(330deg) skewY(-60deg);
+    -ms-transform: rotate(330deg) skewY(-60deg);
+    transform: rotate(330deg) skewY(-60deg);
+}
+
+li:nth-child(12) p {
+    --webkit-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
 }
