@@ -15,6 +15,16 @@ describe("Goals", () => {
     });
   });
 
+  it("should show months", async () => {
+    render(<Goals goals={goalsMock} />);
+
+    await waitFor(() => {
+      expect(screen.getByText("Feb")).toBeInTheDocument();
+    });
+
+    expect(screen.getByText("Mar")).toBeInTheDocument();
+  });
+
   it("should show goals", async () => {
     render(<Goals goals={goalsMock} />);
 

@@ -1,20 +1,108 @@
 .goals {
     padding: 1rem 2rem 2rem 2rem;
+    position: relative;
+    height: 100vh;
 }
+
+.calendar {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 40rem;
+    height: 40rem;
+}
+
+.months {
+    position: relative;
+    padding: 0;
+    margin: 1rem auto;
+    width: 40rem;
+    height: 40rem;
+    list-style: none;
+}
+
+.month {
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.month:first-child {
+    right: 14rem;
+    top: -2.5rem;
+}
+
+.month:nth-child(2) {
+    right: 4rem;
+    top: 3rem;
+}
+
+.month:nth-child(3) {
+    right: -2rem;
+    top: 13rem;
+}
+
+.month:nth-child(4) {
+    right: -2rem;
+    top: 23rem;
+}
+
+.month:nth-child(5) {
+    right: 3rem;
+    top: 33rem;
+}
+
+.month:nth-child(6) {
+    right: 14rem;
+    top: 39rem;
+}
+
+.month:nth-child(7) {
+    right: 24rem;
+    top: 39rem;
+}
+
+.month:nth-child(8) {
+    right: 35rem;
+    top: 33rem;
+}
+
+.month:nth-child(9) {
+    right: 40rem;
+    top: 23rem;
+}
+
+.month:nth-child(10) {
+    right: 40rem;
+    top: 13rem;
+}
+
+.month:nth-child(11) {
+    right: 35rem;
+    top: 3rem;
+}
+
+.month:nth-child(12) {
+    right: 25rem;
+    top: -2.5rem;
+}
+
 
 .goal-list {
     position: relative;
     border: 1px solid black;
     padding: 0;
-    margin: 1em auto;
-    width: 40em;
-    height: 40em;
+    margin: 1rem auto;
+    width: 40rem;
+    height: 40rem;
     border-radius: 50%;
     list-style: none;
     overflow: hidden;
 }
 
-li {
+.list {
     overflow: hidden;
     position: absolute;
     top: 0; right: 0;
@@ -33,146 +121,146 @@ li {
     padding-top: 50px;
 }
 
-li:first-child {
+.list:first-child {
     --webkit-transform: rotate(0deg) skewY(-60deg);
     -ms-transform: rotate(0deg) skewY(-60deg);
     transform: rotate(0deg) skewY(-60deg);
 }
 
-li:first-child p {
+.list:first-child p {
     --webkit-transform: rotate(-90deg);
     -ms-transform: rotate(-90deg);
     transform: rotate(-90deg);
 }
 
-li:nth-child(2) {
+.list:nth-child(2) {
     --webkit-transform: rotate(30deg) skewY(-60deg);
     -ms-transform: rotate(30deg) skewY(-60deg);
     transform: rotate(30deg) skewY(-60deg);
 }
 
-li:nth-child(2) p {
+.list:nth-child(2) p {
     --webkit-transform: rotate(-90deg);
     -ms-transform: rotate(-90deg);
     transform: rotate(-90deg);
 }
 
-li:nth-child(3) {
+.list:nth-child(3) {
     --webkit-transform: rotate(60deg) skewY(-60deg);
     -ms-transform: rotate(60deg) skewY(-60deg);
     transform: rotate(60deg) skewY(-60deg);
 }
 
-li:nth-child(3) p {
+.list:nth-child(3) p {
     --webkit-transform: rotate(-90deg);
     -ms-transform: rotate(-90deg);
     transform: rotate(-90deg);
 }
 
-li:nth-child(4) {
+.list:nth-child(4) {
     --webkit-transform: rotate(90deg) skewY(-60deg);
     -ms-transform: rotate(90deg) skewY(-60deg);
     transform: rotate(90deg) skewY(-60deg);
 }
 
-li:nth-child(4) p {
+.list:nth-child(4) p {
     --webkit-transform: rotate(-90deg);
     -ms-transform: rotate(-90deg);
     transform: rotate(-90deg);
 }
 
-li:nth-child(5) {
+.list:nth-child(5) {
     --webkit-transform: rotate(120deg) skewY(-60deg);
     -ms-transform: rotate(120deg) skewY(-60deg);
     transform: rotate(120deg) skewY(-60deg);
 }
 
-li:nth-child(5) p {
+.list:nth-child(5) p {
     --webkit-transform: rotate(-90deg);
     -ms-transform: rotate(-90deg);
     transform: rotate(-90deg);
 }
 
-li:nth-child(6) {
+.list:nth-child(6) {
     --webkit-transform: rotate(150deg) skewY(-60deg);
     -ms-transform: rotate(150deg) skewY(-60deg);
     transform: rotate(150deg) skewY(-60deg);
 }
 
-li:nth-child(6) p {
+.list:nth-child(6) p {
     --webkit-transform: rotate(-90deg);
     -ms-transform: rotate(-90deg);
     transform: rotate(-90deg);
 
 }
 
-li:nth-child(7) {
+.list:nth-child(7) {
     --webkit-transform: rotate(180deg) skewY(-60deg);
     -ms-transform: rotate(180deg) skewY(-60deg);
     transform: rotate(180deg) skewY(-60deg);
 }
 
-li:nth-child(7) p {
+.list:nth-child(7) p {
     --webkit-transform: rotate(90deg);
     -ms-transform: rotate(90deg);
     transform: rotate(90deg);
 }
 
-li:nth-child(8) {
+.list:nth-child(8) {
     --webkit-transform: rotate(210deg) skewY(-60deg);
     -ms-transform: rotate(210deg) skewY(-60deg);
     transform: rotate(210deg) skewY(-60deg);
 }
 
-li:nth-child(8) p {
+.list:nth-child(8) p {
     --webkit-transform: rotate(90deg);
     -ms-transform: rotate(90deg);
     transform: rotate(90deg);
 }
 
-li:nth-child(9) {
+.list:nth-child(9) {
     --webkit-transform: rotate(240deg) skewY(-60deg);
     -ms-transform: rotate(240deg) skewY(-60deg);
     transform: rotate(240deg) skewY(-60deg);
 }
 
-li:nth-child(9) p {
+.list:nth-child(9) p {
     --webkit-transform: rotate(90deg);
     -ms-transform: rotate(90deg);
     transform: rotate(90deg);
 }
 
-li:nth-child(10) {
+.list:nth-child(10) {
     --webkit-transform: rotate(270deg) skewY(-60deg);
     -ms-transform: rotate(270deg) skewY(-60deg);
     transform: rotate(270deg) skewY(-60deg);
 }
 
-li:nth-child(10) p {
+.list:nth-child(10) p {
     --webkit-transform: rotate(90deg);
     -ms-transform: rotate(90deg);
     transform: rotate(90deg);
 }
 
-li:nth-child(11) {
+.list:nth-child(11) {
     --webkit-transform: rotate(300deg) skewY(-60deg);
     -ms-transform: rotate(300deg) skewY(-60deg);
     transform: rotate(300deg) skewY(-60deg);
 }
 
-li:nth-child(11) p {
+.list:nth-child(11) p {
     --webkit-transform: rotate(90deg);
     -ms-transform: rotate(90deg);
     transform: rotate(90deg);
 }
 
-li:nth-child(12) {
+.list:nth-child(12) {
     --webkit-transform: rotate(330deg) skewY(-60deg);
     -ms-transform: rotate(330deg) skewY(-60deg);
     transform: rotate(330deg) skewY(-60deg);
 }
 
-li:nth-child(12) p {
+.list:nth-child(12) p {
     --webkit-transform: rotate(90deg);
     -ms-transform: rotate(90deg);
     transform: rotate(90deg);
