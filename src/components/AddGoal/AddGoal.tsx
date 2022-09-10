@@ -18,7 +18,11 @@ const monthOptions = [
   "12",
 ];
 
-const AddGoal = () => {
+const AddGoal = ({
+  amountOfFilledMonths,
+}: {
+  amountOfFilledMonths: number;
+}) => {
   const [goal, setGoal] = useState<string>("");
   const [selectedMonth, setSelectedMonth] = useState<string | null>(null);
   const [error, setError] = useState<string | undefined>(undefined);
@@ -46,6 +50,8 @@ const AddGoal = () => {
         });
     }
   };
+
+  const showButtonAsDisabled = !isValid || amountOfFilledMonths >= 12;
 
   return (
     <form className="form" onSubmit={handleSubmit}>
@@ -87,9 +93,9 @@ const AddGoal = () => {
         {error && <p className="error">{error}</p>}
 
         <button
-          disabled={!isValid}
+          disabled={showButtonAsDisabled}
           className={classNames("button", {
-            "button-disabled": !isValid,
+            "button-disabled": showButtonAsDisabled,
           })}
           type="submit"
         >

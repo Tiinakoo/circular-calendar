@@ -17,6 +17,8 @@ function App() {
       .catch(() => setError("Something went wrong when getting goals"));
   }, []);
 
+  const amountOfFilledMonths = goals.length;
+
   return (
     <div className="app">
       <header className="header">Goal organizer</header>
@@ -25,9 +27,9 @@ function App() {
 
       {!error && (
         <>
-          <AddGoal />
+          <AddGoal amountOfFilledMonths={amountOfFilledMonths} />
 
-          {goals.length > 0 && <Goals goals={goals} />}
+          {amountOfFilledMonths > 0 && <Goals goals={goals} />}
         </>
       )}
     </div>

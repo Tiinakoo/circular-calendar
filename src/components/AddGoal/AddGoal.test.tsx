@@ -11,31 +11,31 @@ const addGoalMock = addGoal as jest.Mock;
 
 describe("AddGoal", () => {
   it("should show input for writing a goal", () => {
-    render(<AddGoal />);
+    render(<AddGoal amountOfFilledMonths={0} />);
 
     expect(screen.getByText("Add goal *")).toBeInTheDocument();
   });
 
   it("should show dropdown for choosing a month for the goal", () => {
-    render(<AddGoal />);
+    render(<AddGoal amountOfFilledMonths={0} />);
 
     expect(screen.getByText("Pick month *")).toBeInTheDocument();
   });
 
   it("should show submit button for sending a new goal", () => {
-    render(<AddGoal />);
+    render(<AddGoal amountOfFilledMonths={0} />);
 
     expect(screen.getByRole("button", { name: "Add" })).toBeInTheDocument();
   });
 
   it("should show submit button as disabled when fields are not valid", () => {
-    render(<AddGoal />);
+    render(<AddGoal amountOfFilledMonths={0} />);
 
     expect(screen.getByRole("button")).toBeDisabled();
   });
 
   it("should add new goal when fields are filled and form is submitted", async () => {
-    render(<AddGoal />);
+    render(<AddGoal amountOfFilledMonths={0} />);
 
     addGoalMock.mockImplementationOnce(() => Promise.resolve());
 
@@ -56,7 +56,7 @@ describe("AddGoal", () => {
       Promise.reject("Error")
     );
 
-    render(<AddGoal />);
+    render(<AddGoal amountOfFilledMonths={0} />);
 
     userEvent.type(screen.getByRole("textbox"), "New goal");
     userEvent.selectOptions(screen.getByRole("combobox"), ["1"]);
@@ -69,5 +69,14 @@ describe("AddGoal", () => {
     await expect(
       screen.getByText("Oops, something went wrong, please try again!")
     ).toBeInTheDocument();
+  });
+
+  it("should show submit button as disabled when the calendar is full", () => {
+    render(<AddGoal amountOfFilledMonths={12} />);
+
+    userEvent.type(screen.getByRole("textbox"), "New goal");
+    userEvent.selectOptions(screen.getByRole("combobox"), ["1"]);
+
+    expect(screen.getByRole("button")).toBeDisabled();
   });
 });
