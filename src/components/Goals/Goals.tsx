@@ -2,11 +2,22 @@ import React from "react";
 import { Goal } from "../../types";
 import "./Goals.css";
 
-const getMonthName = (monthNumber: number) => {
-  const date = new Date();
-  date.setMonth(monthNumber - 1);
+enum MonthNameOption {
+  SHORT = "short",
+  LONG = "long",
+}
 
-  return date.toLocaleString("en-US", { month: "short" });
+const getMonthName = ({
+  month,
+  monthNameOption = MonthNameOption.SHORT,
+}: {
+  month: number;
+  monthNameOption?: MonthNameOption;
+}) => {
+  const date = new Date();
+  date.setMonth(month - 1);
+
+  return date.toLocaleString("en-US", { month: monthNameOption });
 };
 
 const monthOptions = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
@@ -24,15 +35,16 @@ const Goals = ({ goals }: { goals: Array<Goal> }) => {
     });
 
   const monthsWithGoals = getAllMonthsWithGoals(goals);
+
   return (
     <section className="goals">
       <h1>Goals</h1>
 
-      <div className="calendar">
+      <div className="calendar" aria-hidden>
         <ul className="months">
           {monthOptions.map((month) => (
             <li key={month} className="month">
-              <p>{getMonthName(month)}</p>
+              <p>{getMonthName({ month })}</p>
             </li>
           ))}
         </ul>
@@ -43,7 +55,16 @@ const Goals = ({ goals }: { goals: Array<Goal> }) => {
           {monthsWithGoals.map(({ goal, month }) => (
             <li className="list" key={month}>
               <div className="list-item">
-                <p className="goal">{goal}</p>
+                <span data-testid="goal-with-month" className="visually-hidden">
+                  {"Goal for " +
+                    getMonthName({
+                      month,
+                      monthNameOption: MonthNameOption.LONG,
+                    })}
+                </span>
+                <p data-testid="goal" className="goal">
+                  {goal}
+                </p>
               </div>
             </li>
           ))}

@@ -19,6 +19,12 @@ describe("Goals", () => {
     expect(screen.getAllByTestId("goal")).toHaveLength(12);
   });
 
+  it("should show months next to goal for assistive technology", () => {
+    render(<Goals goals={goalsMock} />);
+
+    expect(screen.getAllByTestId("goal-with-month")).toHaveLength(12);
+  });
+
   it("should show goals", () => {
     render(<Goals goals={goalsMock} />);
 
