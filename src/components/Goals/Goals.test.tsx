@@ -1,5 +1,5 @@
 import Goals from "./Goals";
-import { render, screen, waitFor } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 
 describe("Goals", () => {
   const goalsMock = [
@@ -7,31 +7,22 @@ describe("Goals", () => {
     { id: "124", goal: "Some other goal", month: 3 },
   ];
 
-  it("should show title", async () => {
+  it("should show title", () => {
     render(<Goals goals={goalsMock} />);
 
-    await waitFor(() => {
-      expect(screen.getByText("Goals")).toBeInTheDocument();
-    });
+    expect(screen.getByText("Goals")).toBeInTheDocument();
   });
 
-  it("should show months", async () => {
+  it("should show months", () => {
     render(<Goals goals={goalsMock} />);
 
-    await waitFor(() => {
-      expect(screen.getByText("Feb")).toBeInTheDocument();
-    });
-
-    expect(screen.getByText("Mar")).toBeInTheDocument();
+    expect(screen.getAllByTestId("goal")).toHaveLength(12);
   });
 
-  it("should show goals", async () => {
+  it("should show goals", () => {
     render(<Goals goals={goalsMock} />);
 
-    await waitFor(() => {
-      expect(screen.getByText("Some goal")).toBeInTheDocument();
-    });
-
+    expect(screen.getByText("Some goal")).toBeInTheDocument();
     expect(screen.getByText("Some other goal")).toBeInTheDocument();
   });
 });
