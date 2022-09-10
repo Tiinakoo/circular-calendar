@@ -11,31 +11,37 @@ const addGoalMock = addGoal as jest.Mock;
 
 describe("AddGoal", () => {
   it("should show input for writing a goal", () => {
-    render(<AddGoal amountOfFilledMonths={0} />);
+    render(<AddGoal filledMonths={[]} />);
 
     expect(screen.getByText("Add goal *")).toBeInTheDocument();
   });
 
   it("should show dropdown for choosing a month for the goal", () => {
-    render(<AddGoal amountOfFilledMonths={0} />);
+    render(<AddGoal filledMonths={[]} />);
 
     expect(screen.getByText("Pick month *")).toBeInTheDocument();
   });
 
+  it("should show dropdown option as disabled if the month is filled already", () => {
+    render(<AddGoal filledMonths={[2]} />);
+
+    expect(screen.getByRole("option", { name: "2" })).toBeDisabled();
+  });
+
   it("should show submit button for sending a new goal", () => {
-    render(<AddGoal amountOfFilledMonths={0} />);
+    render(<AddGoal filledMonths={[]} />);
 
     expect(screen.getByRole("button", { name: "Add" })).toBeInTheDocument();
   });
 
   it("should show submit button as disabled when fields are not valid", () => {
-    render(<AddGoal amountOfFilledMonths={0} />);
+    render(<AddGoal filledMonths={[]} />);
 
     expect(screen.getByRole("button")).toBeDisabled();
   });
 
   it("should add new goal when fields are filled and form is submitted", async () => {
-    render(<AddGoal amountOfFilledMonths={0} />);
+    render(<AddGoal filledMonths={[]} />);
 
     addGoalMock.mockImplementationOnce(() => Promise.resolve());
 
@@ -56,7 +62,7 @@ describe("AddGoal", () => {
       Promise.reject("Error")
     );
 
-    render(<AddGoal amountOfFilledMonths={0} />);
+    render(<AddGoal filledMonths={[]} />);
 
     userEvent.type(screen.getByRole("textbox"), "New goal");
     userEvent.selectOptions(screen.getByRole("combobox"), ["1"]);
@@ -72,7 +78,7 @@ describe("AddGoal", () => {
   });
 
   it("should show submit button as disabled when the calendar is full", () => {
-    render(<AddGoal amountOfFilledMonths={12} />);
+    render(<AddGoal filledMonths={[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]} />);
 
     userEvent.type(screen.getByRole("textbox"), "New goal");
     userEvent.selectOptions(screen.getByRole("combobox"), ["1"]);

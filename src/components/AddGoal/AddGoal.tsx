@@ -18,11 +18,7 @@ const monthOptions = [
   "12",
 ];
 
-const AddGoal = ({
-  amountOfFilledMonths,
-}: {
-  amountOfFilledMonths: number;
-}) => {
+const AddGoal = ({ filledMonths }: { filledMonths: Array<number> }) => {
   const [goal, setGoal] = useState<string>("");
   const [selectedMonth, setSelectedMonth] = useState<string | null>(null);
   const [error, setError] = useState<string | undefined>(undefined);
@@ -51,7 +47,7 @@ const AddGoal = ({
     }
   };
 
-  const showButtonAsDisabled = !isValid || amountOfFilledMonths >= 12;
+  const showButtonAsDisabled = !isValid || filledMonths.length >= 12;
 
   return (
     <form className="form" onSubmit={handleSubmit}>
@@ -86,7 +82,12 @@ const AddGoal = ({
             Select a month
           </option>
           {monthOptions.map((option) => (
-            <option className="option" key={option} value={option}>
+            <option
+              className="option"
+              key={option}
+              value={option}
+              disabled={filledMonths.includes(Number(option))}
+            >
               {option}
             </option>
           ))}

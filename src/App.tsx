@@ -27,7 +27,7 @@ function App() {
 
       {!error && (
         <>
-          <AddGoal amountOfFilledMonths={amountOfFilledMonths} />
+          <AddGoal filledMonths={goals.map(({ month }) => month)} />
 
           {amountOfFilledMonths > 0 && <Goals goals={goals} />}
         </>
