@@ -76,11 +76,15 @@ const AddGoal = ({
         </label>
         <select
           className="select"
+          defaultValue=""
           name={selectId}
           id={selectId}
           onChange={handleChangeMonth}
           required
         >
+          <option className="option" value="" disabled>
+            Select a month
+          </option>
           {monthOptions.map((option) => (
             <option className="option" key={option} value={option}>
               {option}

@@ -13,9 +13,10 @@
 }
 
 .input {
-    border-radius: 10px;
     border: 2px solid black;
-    height: 2rem;
+    border-radius: 10px;
+    box-sizing: border-box;
+    height: 40px;
     padding: 0 1rem;
     width: 10rem;
 }
@@ -24,16 +25,16 @@
     background-color: white;
     border-radius: 10px;
     border: 2px solid black;
-    height: 2rem;
+    height: 40px;
     padding: 0 1rem;
     width: 10rem;
 }
 
 .button {
     background-color: transparent;
-    border-radius: 10px;
     border: 2px solid black;
-    height: 2rem;
+    border-radius: 10px;
+    height: 40px;
     padding: 0 1rem;
     width: 10rem;
 }
@@ -44,4 +45,14 @@
 
 .error {
     color: red;
+}
+
+select:required:invalid {
+    color: gray;
+}
+option[value=""][disabled] {
+    display: none;
+}
+option {
+    color: black;
 }
